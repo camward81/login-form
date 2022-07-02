@@ -1,0 +1,12 @@
+.main {
+  min-height: 110vh;
+  background: linear-gradient(
+    200deg,
+    rgba(16, 16, 112, 0.95),
+    rgb(63, 63, 189, 0.95),
+    rgb(55, 60, 180, 0.95)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

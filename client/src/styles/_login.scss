@@ -1,0 +1,102 @@
+.login {
+  position: absolute;
+  top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 5rem 5rem 5rem;
+  width: 32rem;
+  margin: 0rem 25rem 0rem 27rem;
+  border-radius: 10px;
+  @media screen and (max-width: 425px) {
+    padding: 2rem 8rem 5rem 8rem;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    color: whitesmoke;
+    padding-bottom: 1rem;
+    .icon {
+      font-size: 3rem;
+      margin-right: 10px;
+    }
+    h1 {
+      letter-spacing: 1px;
+      font-size: 3rem;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.2rem;
+    .user {
+      display: flex;
+      flex-direction: column;
+      padding: 0.5rem 0rem;
+      color: whitesmoke;
+      label {
+        margin-right: 5px;
+      }
+      input {
+        width: 100%;
+        padding-left: 5px;
+        border-radius: 5px;
+        border: none;
+      }
+    }
+    .pass {
+      display: flex;
+      flex-direction: column;
+      padding: 0.5rem 0rem;
+      color: whitesmoke;
+      label {
+        margin-right: 13px;
+      }
+      input {
+        width: 100%;
+        padding-left: 5px;
+        border-radius: 5px;
+        border: none;
+      }
+    }
+    button {
+      margin: 1rem 0rem;
+      font-size: 1.2rem;
+      padding: 0.5rem 0rem;
+      background: rgb(234, 90, 37);
+      color: whitesmoke;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: whitesmoke;
+      color: rgb(234, 90, 37);
+      border: 3px solid rgb(234, 90, 37);
+      padding: 0.3rem 0rem;
+    }
+  }
+  .logerr {
+    padding: 1rem 0rem 0rem 0rem;
+    text-align: center;
+    color: yellow;
+  }
+  .sign-up {
+    display: flex;
+    margin: 2rem 0rem;
+    .question {
+      color: whitesmoke;
+      padding-right: 1rem;
+    }
+    .click-here {
+      color: whitesmoke;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .click-here:hover {
+      opacity: 0.8;
+    }
+  }
+}
