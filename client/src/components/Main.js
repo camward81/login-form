@@ -88,6 +88,7 @@ const Main = () => {
         addUser();
         backToLogIn();
         alert("You have successfully created an account. You may now log in.");
+        setLogErr(false);
         setUserExists(false);
         setInputLength(false);
       } else if (checkUser.length !== 0) {
