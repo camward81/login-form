@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 //components
 import Login from "../components/Login";
 import Signup from "../components/Signup";
 import Welcome from "../components/Welcome";
 //axios
 import axios from "axios";
+import bcrypt from "bcryptjs";
 
 const Main = () => {
   //state
@@ -16,6 +17,15 @@ const Main = () => {
   const [users, setUsers] = useState("");
   const [userexists, setUserExists] = useState(false);
   const [inputlength, setInputLength] = useState(false);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/users")
+      .then((response) => {
+        setUsers(response.data);
+      })
+      .catch((error) => (error ? console.log(error) : ""));
+  }, []);
 
   //sign up for an account
   const goToSignUp = () => {
@@ -47,11 +57,14 @@ const Main = () => {
   const getUsers = () => {
     axios.get("http://localhost:3001/users").then((response) => {
       setUsers(response.data);
-      response.data.map((user) =>
-        user.username === username && user.password === password
-          ? setLogin(true)
-          : setLogErr(true)
-      );
+      response.data.map(async (user) => {
+        const compare = await bcrypt.compare(password, user.password);
+        if (user.username === username && compare === true) {
+          setLogin(true);
+        } else {
+          setLogErr(true);
+        }
+      });
     });
   };
 
